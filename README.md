@@ -1,12 +1,12 @@
 # Project Title
 
-Websiste for guestopia
+Website for guestopia
 
 ## Getting Started
 
 ### Dependencies
 
-List any prerequisites, libraries, OS version, etc., needed before installing the program.
+Prerequisites needed before installing the program.
 
 - Node.js
 - MongoDB
