@@ -1,14 +1,14 @@
 // setupDatabase.js
 
 const mongoose = require('mongoose');
-const AboutUs = require('./models/aboutUs');
-const Blog = require('./models/blog');
-const Career = require('./models/career');
-const Contact = require('./models/contact');
-const Info = require('./models/info');
-const News = require('./models/news');
-const Partnership = require('./models/partnership');
-const Service = require('./models/service');
-const Team = require('./models/team');
-const Testimonial = require('./models/testimonial');
+// const AboutUs = require('./src/models/aboutUs');
+// const Blog = require('./src/models/blog');
+// const Career = require('./src/models/career');
+// const Contact = require('./src/models/contact');
+// const Info = require('./src/models/info');
+// const News = require('./src/models/news');
+// const Partnership = require('./src/models/partnership');
+// const Service = require('./src/models/service');
+// const Team = require('./src/models/team');
+// const Testimonial = require('./src/models/testimonial');
 

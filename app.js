@@ -1,10 +1,15 @@
-// app.js
-
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-// Import the AboutUs model
-const setupDatabase = require('./setupDatabase');
+const aboutUsRoutes = require('./src/routes/aboutUs');
+const blogRoutes = require('./src/routes/blog');
+const careerRoutes = require('./src/routes/career');
+const contactRoutes = require('./src/routes/contact');
+const infoRoutes = require('./src/routes/info');
+const newsRoutes = require('./src/routes/news');
+const partnershipRoutes = require('./src/routes/partnership');
+const serviceRoutes = require('./src/routes/service');
+const teamRoutes = require('./src/routes/team');
 
 dotenv.config();
 const app = express();
@@ -21,3 +26,18 @@ mongoose.connect(process.env.MONGODB_URI)
   .catch(error => {
     console.error('Error connecting to MongoDB:', error);
   });
+
+app.use(express.json());
+
+app.use("/api", aboutUsRoutes);
+app.use("/api", blogRoutes);
+app.use("/api", careerRoutes);
+app.use("/api", contactRoutes);
+app.use("/api", infoRoutes);
+app.use("/api", newsRoutes);
+app.use("/api", partnershipRoutes);
+app.use("/api", serviceRoutes);
+app.use("/api", teamRoutes);
+
+
+module.exports = app;
