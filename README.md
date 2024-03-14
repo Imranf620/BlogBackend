@@ -1,8 +1,4 @@
-# Project Title
-
-Website for guestopia
-
-## Getting Started
+# Website for guestopia
 
 ### Dependencies
 
