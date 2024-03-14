@@ -10,6 +10,8 @@ const newsRoutes = require('./src/routes/news');
 const partnershipRoutes = require('./src/routes/partnership');
 const serviceRoutes = require('./src/routes/service');
 const teamRoutes = require('./src/routes/team');
+const profileRoutes = require('./src/routes/profile');
+const accountRoutes = require('./src/routes/account');
 
 dotenv.config();
 const app = express();
@@ -38,6 +40,8 @@ app.use("/api", newsRoutes);
 app.use("/api", partnershipRoutes);
 app.use("/api", serviceRoutes);
 app.use("/api", teamRoutes);
+app.use("/api", profileRoutes);
+app.use("/api", accountRoutes);
 
 
 module.exports = app;
