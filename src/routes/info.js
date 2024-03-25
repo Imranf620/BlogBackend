@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const infoController = require('../controllers/info');
+const uploadMiddleware = require('../middleware/uploadMultipleFiles');
 
-router.post('/info', infoController.createInfo);
+// Define routes
+router.post('/info', uploadMiddleware('info/'), infoController.createInfo);
+router.put('/info/:id', uploadMiddleware('info/'), infoController.updateInfo);
 router.get('/info', infoController.getAllInfos);
 router.get('/info/:id', infoController.getInfoById);
-router.put('/info/:id', infoController.updateInfo);
 router.delete('/info/:id', infoController.deleteInfo);
 
 module.exports = router;

@@ -10,6 +10,7 @@ const newsRoutes = require('./src/routes/news');
 const partnershipRoutes = require('./src/routes/partnership');
 const serviceRoutes = require('./src/routes/service');
 const teamRoutes = require('./src/routes/team');
+const testimonialRoutes = require('./src/routes/testimonial');
 const profileRoutes = require('./src/routes/profile');
 const accountRoutes = require('./src/routes/account');
 
@@ -40,6 +41,7 @@ app.use("/api", newsRoutes);
 app.use("/api", partnershipRoutes);
 app.use("/api", serviceRoutes);
 app.use("/api", teamRoutes);
+app.use("/api", testimonialRoutes);
 app.use("/api", profileRoutes);
 app.use("/api", accountRoutes);
 

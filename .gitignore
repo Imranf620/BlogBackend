@@ -1,0 +1,5 @@
+# Ignore uploads
+uploads
+
+# Ignore node modules
+node_modules
