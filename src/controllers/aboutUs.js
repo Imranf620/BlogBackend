@@ -4,7 +4,21 @@ const aboutUsController = {
   // Create a new aboutUs document
   createAboutUs: async (req, res) => {
     try {
-      const aboutUs = await aboutUsService.createAboutUs(req.body);
+      let aboutUsInfo = { ...req.body };
+      
+      // Handling file uploads
+      if (req.files) {
+        if (req.files.image1 && req.files.image1[0]) {
+          aboutUsInfo.image1 = req.files.image1[0].path;
+        }
+        if (req.files.image2 && req.files.image2[0]) {
+          aboutUsInfo.image2 = req.files.image2[0].path;
+        }
+        if (req.files.image3 && req.files.image3[0]) {
+          aboutUsInfo.image3 = req.files.image3[0].path;
+        }
+      }
+      const aboutUs = await aboutUsService.createAboutUs(aboutUsInfo);
       res.status(201).json(aboutUs);
     } catch (error) {
       res.status(400).json({ error: error.message });
@@ -37,7 +51,20 @@ const aboutUsController = {
   // Update a specific aboutUs document by ID
   updateAboutUs: async (req, res) => {
     try {
-      const aboutUs = await aboutUsService.updateAboutUs(req.params.id, req.body);
+      let updatedAboutUs = { ...req.body };
+  
+      if (req.files) {
+        if (req.files.image1 && req.files.image1[0]) {
+          updatedAboutUs.image1 = req.files.image1[0].path;
+        }
+        if (req.files.image2 && req.files.image2[0]) {
+          updatedAboutUs.image2 = req.files.image2[0].path;
+        }
+        if (req.files.image3 && req.files.image3[0]) {
+          updatedAboutUs.image3 = req.files.image3[0].path;
+        }
+      }
+      const aboutUs = await aboutUsService.updateAboutUs(req.params.id, updatedAboutUs);
       if (!aboutUs) {
         return res.status(404).json({ error: 'AboutUs not found' });
       }

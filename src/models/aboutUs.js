@@ -9,7 +9,20 @@ const aboutUsSchema = new mongoose.Schema({
   vision: {
     type: String,
     required: true
-  }
+  },
+  image1: {
+    type: String,
+    required: true
+  },
+  image2: {
+    type: String,
+    required: true
+  },
+  image3: {
+    type: String,
+    required: true
+  },
+
 }, { timestamps: true }); // Add timestamps option here
 
 // Create a model for the 'aboutUs' collection using the schema
